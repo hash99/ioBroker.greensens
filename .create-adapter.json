@@ -1,0 +1,37 @@
+{
+	"cli": true,
+	"adapterName": "greensens",
+	"title": "Greensens Hub",
+	"description": "Greensens Adapter for Greensens Hubs",
+	"keywords": [
+		"Greensens Flower Moisture"
+	],
+	"expert": "no",
+	"features": [
+		"adapter"
+	],
+	"adminFeatures": [],
+	"type": "garden",
+	"startMode": "daemon",
+	"connectionType": "cloud",
+	"dataSource": "poll",
+	"connectionIndicator": "no",
+	"language": "JavaScript",
+	"adminReact": "no",
+	"tools": [
+		"ESLint",
+		"type checking"
+	],
+	"indentation": "Tab",
+	"quotes": "double",
+	"es6class": "yes",
+	"authorName": "hash99",
+	"authorGithub": "hash99",
+	"authorEmail": "hash99@iesy.net",
+	"gitRemoteProtocol": "HTTPS",
+	"gitCommit": "no",
+	"license": "MIT License",
+	"ci": "gh-actions",
+	"dependabot": "no",
+	"creatorVersion": "1.32.0"
+}
