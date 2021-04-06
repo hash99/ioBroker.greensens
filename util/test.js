@@ -1,5 +1,5 @@
 var greensens = require("./greensens.js");
-var greensens2 = require("./greensens2.js");
+
 
 var pwd = "";
 var email = "";
@@ -20,12 +20,12 @@ greensens_instance.GetToken(function (err, token) {
 console.log("Results: " + json);                
 */
 
-var greensens2_inst = new greensens2(email, pwd);
+var greensens_inst = new greensens(email, pwd);
 var token;
 var Hubs;
-token = greensens2_inst.GetToken();
+token = greensens_inst.GetToken();
 //console.log(token);
-Hubs = greensens2_inst.GetPlants(token);
+Hubs = greensens_inst.GetPlants(token);
 //console.log(JSON.stringify(Hubs));
 //var Hub = JSON.parse(json);
 if (Hubs) {
@@ -37,3 +37,6 @@ if (Hubs) {
                 i = i + 1;
         } while (i < plants.length);
 }
+//console.log("xtokenx: " + xtoken);
+//greensens_instance.GetPlants(xtoken,function (json) { console.log(JSON.stringify(json)) });
+//greensens_instance.GetToken(function(err,token){console.log(err+token)};

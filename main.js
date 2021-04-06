@@ -12,7 +12,7 @@ let request_count = 100; //max api request per Day
 
 // Load your modules here, e.g.:
 // const fs = require("fs");
-const greensens2 = require("./util/greensens2.js");
+const greensens = require("./util/greensens.js");
 
 class Greensens extends utils.Adapter {
 
@@ -29,18 +29,19 @@ class Greensens extends utils.Adapter {
 		// this.on("objectChange", this.onObjectChange.bind(this));
 		// this.on("message", this.onMessage.bind(this));
 		this.on("unload", this.onUnload.bind(this));
-	}
+		}
 
 	/**
 	 * Is called when databases are connected and adapter received configuration.
 	 */
 	async onReady() {
 		// Initialize your adapter here
+        const Greensens_account = this.config.Greensens_account;
+		const Greensens_pwd =  this.config.Greensens_pwd;
+		var greensens_inst = new greensens(Greensens_account, Greensens_pwd);
 
-		var greensens2_inst = new greensens2(this.config.Greensens_account, this.config.Greensens_pwd);
-
-		var token = greensens2_inst.GetToken();
-		var Hubs = greensens2_inst.GetPlants(token);
+		var token = greensens_inst.GetToken();
+		var Hubs = greensens_inst.GetPlants(token);
 
 
 		// The adapters config (in the instance object everything under the attribute "native") is accessible via
@@ -169,9 +170,9 @@ class Greensens extends utils.Adapter {
 	// }
 	async readStatus(newStatus) {
 		if (!newStatus) {
-			var greensens2_inst = new greensens2(this.config.Greensens_account, this.config.Greensens_pwd);
-			var token = greensens2_inst.GetToken();
-			newStatus = greensens2_inst.GetPlants(token);
+			var greensens_inst = new greensens(this.config.Greensens_account, this.config.Greensens_pwd);
+			var token = greensens_inst.GetToken();
+			newStatus = greensens_inst.GetPlants(token);
 		}
 		await this.setNewStatus(newStatus);
 		adapterIntervals.readAllStates = setTimeout(this.readStatus.bind(this), ((24 * 60) / request_count) * 60000);
@@ -208,7 +209,7 @@ class Greensens extends utils.Adapter {
 				await this.setStateAsync(hubs[i].name + '.' + p + "." + 'moisturePercent', { val: parseFloat(plants[j].moisturePercent).toFixed(2), ack: true });
 				await this.setStateAsync(hubs[i].name + '.' + p + "." + 'illuminationPercent', { val: parseFloat(plants[j].illuminationPercent).toFixed(2), ack: true });
 				var lastDate = new Date(plants[j].lastConnection * 1000);
-				await this.setStateAsync(hubs[i].name + '.' + p + "." + 'LastConnection', { val: lastDate.toGMTString(), ack: true });
+				await this.setStateAsync(hubs[i].name + '.' + p + "." + 'LastConnection', { val: lastDate.toUTCString(), ack: true });
 				await this.setStateAsync(hubs[i].name + '.' + p + "." + 'link', { val: plants[j].link, ack: true });
 				await this.setStateAsync(hubs[i].name + '.' + p + "." + 'state', { val: plants[j].state, ack: true });
 				await this.setStateAsync(hubs[i].name + '.' + p + "." + 'stateColor', { val: plants[j].stateColor, ack: true });
@@ -247,7 +248,6 @@ class Greensens extends utils.Adapter {
 			type: 'channel',
 			common: {
 				name: hubname,
-				type: 'string',
 				role: 'value'
 			},
 			native: {}
@@ -258,7 +258,6 @@ class Greensens extends utils.Adapter {
 			type: 'channel',
 			common: {
 				name: "Plant",
-				type: 'object',
 				role: 'value'
 			},
 			native: {}

@@ -1,76 +1,77 @@
 {
-	"common": {
-		"name": "greensens",
-		"version": "0.0.1",
-		"news": {
-			"0.0.1": {
-				"en": "initial release",
-				"de": "Erstveröffentlichung",
-				"ru": "Начальная версия",
-				"pt": "lançamento inicial",
-				"nl": "Eerste uitgave",
-				"fr": "Première version",
-				"it": "Versione iniziale",
-				"es": "Versión inicial",
-				"pl": "Pierwsze wydanie",
-				"zh-cn": "首次出版"
-			}
-		},
-		"title": "Greensens Hub",
-		"titleLang": {
-			"en": "Greensens Hub",
-			"de": "Greensens Hub",
-			"ru": "Greensens Hub",
-			"pt": "Greensens Hub",
-			"nl": "Greensens Hub",
-			"fr": "Hub des Verts",
-			"it": "Greensens Hub",
-			"es": "Centro de Greensens",
-			"pl": "Greensens Hub",
-			"zh-cn": "格林森斯中心"
-		},
-		"desc": {
-			"en": "Greensens Adapter for Greensens Hubs",
-			"de": "Greensens Adapter für Greensens Hubs",
-			"ru": "Адаптер Greensens для концентраторов Greensens",
-			"pt": "Adaptador Greensens para Hubs Greensens",
-			"nl": "Greensens Adapter voor Greensens Hubs",
-			"fr": "Adaptateur Greensens pour hubs Greensens",
-			"it": "Adattatore Greens per hub Green",
-			"es": "Adaptador Greensens para concentradores Greensens",
-			"pl": "Adapter Greensens do piast Greensens",
-			"zh-cn": "适用于Greensens集线器的Greensens适配器"
-		},
-		"authors": [
-			"hash99 <hash99@iesy.net>"
-		],
-		"keywords": [
-			"Greensens Flower Moisture"
-		],
-		"license": "MIT",
-		"platform": "Javascript/Node.js",
-		"main": "main.js",
-		"icon": "greensens.png",
-		"enabled": true,
-		"extIcon": "https://raw.githubusercontent.com/hash99/ioBroker.greensens/master/admin/greensens.png",
-		"readme": "https://github.com/hash99/ioBroker.greensens/blob/master/README.md",
-		"loglevel": "info",
-		"mode": "daemon",
-		"type": "garden",
-		"compact": true,
-		"connectionType": "cloud",
-		"dataSource": "poll",
-		"materialize": true,
-		"dependencies": [
-			{
-				"js-controller": ">=2.0.0"
-			}
-		]
-	},
-	"native": {
-		"option1": true,
-		"option2": "42"
-	},
-	"objects": [],
-	"instanceObjects": []
+  "common": {
+    "name": "greensens",
+    "version": "0.0.1",
+    "news": {
+      "0.0.1": {
+        "en": "initial release",
+        "de": "Erstveröffentlichung",
+        "ru": "Начальная версия",
+        "pt": "lançamento inicial",
+        "nl": "Eerste uitgave",
+        "fr": "Première version",
+        "it": "Versione iniziale",
+        "es": "Versión inicial",
+        "pl": "Pierwsze wydanie",
+        "zh-cn": "首次出版"
+      }
+    },
+    "title": "Greensens Hub",
+    "titleLang": {
+      "en": "Greensens Hub",
+      "de": "Greensens Hub",
+      "ru": "Greensens Hub",
+      "pt": "Greensens Hub",
+      "nl": "Greensens Hub",
+      "fr": "Hub des Verts",
+      "it": "Greensens Hub",
+      "es": "Centro de Greensens",
+      "pl": "Greensens Hub",
+      "zh-cn": "格林森斯中心"
+    },
+    "desc": {
+      "en": "Greensens Adapter for Greensens Hubs",
+      "de": "Greensens Adapter für Greensens Hubs",
+      "ru": "Адаптер Greensens для концентраторов Greensens",
+      "pt": "Adaptador Greensens para Hubs Greensens",
+      "nl": "Greensens Adapter voor Greensens Hubs",
+      "fr": "Adaptateur Greensens pour hubs Greensens",
+      "it": "Adattatore Greens per hub Green",
+      "es": "Adaptador Greensens para concentradores Greensens",
+      "pl": "Adapter Greensens do piast Greensens",
+      "zh-cn": "适用于Greensens集线器的Greensens适配器"
+    },
+    "authors": [
+      "hash99 <hash99@iesy.net>"
+    ],
+    "keywords": [
+      "Greensens Flower Moisture"
+    ],
+    "license": "MIT",
+    "platform": "Javascript/Node.js",
+    "main": "main.js",
+    "icon": "greensens.png",
+    "enabled": true,
+    "extIcon": "https://raw.githubusercontent.com/hash99/ioBroker.greensens/master/admin/greensens.png",
+    "readme": "https://github.com/hash99/ioBroker.greensens/blob/master/README.md",
+    "loglevel": "info",
+    "mode": "daemon",
+    "type": "garden",
+    "compact": true,
+    "connectionType": "cloud",
+    "dataSource": "poll",
+    "materialize": true,
+    "dependencies": [
+      {
+        "js-controller": ">=2.0.0"
+      }
+    ],
+    "installedFrom": "hash99/ioBroker.greensens#e4fea744e42d3468c96cdd76c83197b559c842a6"
+  },
+  "native": {
+    "Greensens_account": "",
+    "Greensens_pwd": ""
+  },
+  "objects": [],
+  "instanceObjects": []
 }
