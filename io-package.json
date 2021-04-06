@@ -65,7 +65,7 @@
       {
         "js-controller": ">=2.0.0"
       }
-    ],
+    ]
   },
   "native": {
     "Greensens_account": "",
